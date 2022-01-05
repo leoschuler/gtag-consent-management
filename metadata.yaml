@@ -15,5 +15,5 @@
 homepage: "https://github.com/leoschuler/gtag-consent-management"
 documentation: "https://github.com/leoschuler/gtag-consent-management"
 versions:
-  - sha: d6772654bc506ebb0971a61b2d9af023aefea8b4
+  - sha: a7d2ab403501302e664f0b6151fd3e7ffb115695
     changeNotes: Initial Version
