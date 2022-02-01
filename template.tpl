@@ -534,6 +534,8 @@ const callInWindow = require('callInWindow');
 const injectScript = require('injectScript');
 const setDefaultConsentState = require('setDefaultConsentState');
 const encodeUriComponent = require('encodeUriComponent');
+const encodeUri = require('encodeUri');
+
 
 
 const isConsentGranted = require('isConsentGranted');
@@ -608,7 +610,7 @@ function getCookie(cname) {
     return ca[0] || "";
   }
 
-injectScript("https://tags.suagencia.online/cm-loader-"+encodeUriComponent(data.version)+".js?v="+encodeUriComponent(data.cache_version));
+injectScript("https://tags.suagencia.online/cm-loader-"+encodeUri(data.version)+".js?v="+encodeUriComponent(data.cache_version));
 
 data.gtmOnSuccess();
 
