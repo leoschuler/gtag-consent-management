@@ -1,16 +1,8 @@
-___TERMS_OF_SERVICE___
-
-By creating or modifying this file you agree to Google Tag Manager's Community
-Template Gallery Developer Terms of Service available at
-https://developers.google.com/tag-manager/gallery-tos (or such other URL as
-Google may provide), as modified from time to time.
-
-
-___INFO___
+﻿___INFO___
 
 {
   "type": "TAG",
-  "id": "gtag-consent-management",
+  "id": "cvt_temp_public_id",
   "version": 1,
   "securityGroups": [],
   "categories": [
@@ -479,7 +471,7 @@ ___TEMPLATE_PARAMETERS___
             "type": "NON_EMPTY"
           }
         ],
-        "defaultValue": "2.1"
+        "defaultValue": 2.1
       },
       {
         "type": "TEXT",
@@ -541,7 +533,9 @@ const setInWindow = require('setInWindow');
 const callInWindow = require('callInWindow');
 const injectScript = require('injectScript');
 const setDefaultConsentState = require('setDefaultConsentState');
-const callLater = require('callLater');
+const encodeUriComponent = require('encodeUriComponent');
+const encodeUri = require('encodeUri');
+
 
 
 const isConsentGranted = require('isConsentGranted');
@@ -616,30 +610,8 @@ function getCookie(cname) {
     return ca[0] || "";
   }
 
-injectScript("https://tags.suagencia.online/cm-loader-"+data.version+".js?v="+data.cache_version);
+injectScript("https://tags.suagencia.online/cm-loader-"+encodeUri(data.version)+".js?v="+encodeUriComponent(data.cache_version));
 
-/*,
-
-  ()=>{
-    
-    log("loadSuccess");
-    log(initData);
-  callLater( () => {
-      const ret = callInWindow('initConsent',initData);
-      log("ret=",ret);
-  });
-  
-    log("finishInjection");
-  
-  },
-             ()=>{log("load Fail");},
-             "1.0" );
-
-*/
-
-
-
-// Call data.gtmOnSuccess when the tag is finished.
 data.gtmOnSuccess();
 
 
