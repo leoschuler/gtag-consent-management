@@ -1,4 +1,12 @@
-﻿___INFO___
+﻿___TERMS_OF_SERVICE___
+
+By creating or modifying this file you agree to Google Tag Manager's Community
+Template Gallery Developer Terms of Service available at
+https://developers.google.com/tag-manager/gallery-tos (or such other URL as
+Google may provide), as modified from time to time.
+
+
+___INFO___
 
 {
   "type": "TAG",
@@ -10,7 +18,7 @@
     "TAG_MANAGEMENT",
     "UTILITY"
   ],
-  "displayName": "Gestao de Consentimento",
+  "displayName": "Gestao de Consentimento - v2.4",
   "brand": {
     "id": "github.com_leoschuler",
     "displayName": "Suagencia",
@@ -33,6 +41,17 @@ ___TEMPLATE_PARAMETERS___
     "simpleValueType": true,
     "valueHint": "CM-XXXXX",
     "help": "inclua o ID da licensa ou deixa vazio para a versão DEMO"
+  },
+  {
+    "type": "TEXT",
+    "name": "cookie_domain",
+    "displayName": "Dominio",
+    "simpleValueType": true,
+    "valueValidators": [
+      {
+        "type": "NON_EMPTY"
+      }
+    ]
   },
   {
     "type": "TEXT",
@@ -562,6 +581,7 @@ const initData = {
         "class":data.style,
         "closeButton":data.closeButton,
     },
+    "cookie_domain":data.cookie_domain,
     "texto_explicativo":data.descricao,
     "titulo":data.titulo,
     "openSelector":data.open_selector,
@@ -994,6 +1014,7 @@ scenarios:
       "version":"1.0",
       "cache_version":"1",
       style:'default',
+      cookie_domain:"solutta.com",
       closeButton:true,
     };
     // Call runCode to run the template's code.
