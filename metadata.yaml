@@ -15,7 +15,10 @@
 homepage: "https://github.com/leoschuler/gtag-consent-management"
 documentation: "https://github.com/leoschuler/gtag-consent-management"
 versions:
-  # Latest v2.1.1
+  # v2.4
+  - sha: d9c89029d32c5fbc31b9865e556097fda4a54631
+    changeNotes: track the same choice for all subdomains
+  # v2.1.1
   - sha: c7f6082f5dd5399c6af57f7d8004d9e208f401be
     changeNotes: use encodeUri method for a better script injection
   # v2.1
